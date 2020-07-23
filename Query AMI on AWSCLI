@@ -5,7 +5,7 @@ aws ec2 describe-images \
               --query 'sort_by(Images, &CreationDate)[-1].[ImageId]' \
               --output 'text'
               
- THIS IS TO QUERY ALL CENTOS 7 AMI
+ THIS IS TO QUERY ALL CENTOS 7 AMI  ***ADJUST REGION AS REQUIRED
  
  aws ec2 describe-images \
       --owners aws-marketplace \
@@ -16,7 +16,7 @@ aws ec2 describe-images \
       --output table \
   | sort -r
   
-  THIS IS TO QUERY ALL REDHAT 7 AMI
+  THIS IS TO QUERY ALL REDHAT 7 AMI   ***ADJUST REGION AS REQUIRED
   
   aws ec2 describe-images \
     --owners 309956199498 \
