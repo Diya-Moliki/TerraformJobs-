@@ -1,0 +1,28 @@
+THIS IS TO QUERY ANY AWS LINUX AMI
+aws ec2 describe-images \
+              --owners 'aws-marketplace' \
+              --filters 'Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce' \
+              --query 'sort_by(Images, &CreationDate)[-1].[ImageId]' \
+              --output 'text'
+              
+ THIS IS TO QUERY ALL CENTOS 7 AMI
+ 
+ aws ec2 describe-images \
+      --owners aws-marketplace \
+      --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce \
+      --query 'Images[*].[CreationDate,Name,ImageId]' \
+      --filters "Name=name,Values=CentOS Linux 7*" \
+      --region us-west-2 \
+      --output table \
+  | sort -r
+  
+  THIS IS TO QUERY ALL REDHAT 7 AMI
+  
+  aws ec2 describe-images \
+    --owners 309956199498 \
+    --query 'Images[*].[CreationDate,Name,ImageId]' \
+    --filters "Name=name,Values=RHEL-7.?*GA*" \
+    --region us-east-1 \
+    --output table \
+  | sort -r
+ 
