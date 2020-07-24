@@ -1,3 +1,6 @@
+If you store your credential in aws cli you can acess using cat ~/.aws/credentials
+
+
 THIS IS TO QUERY ANY AWS LINUX AMI
 aws ec2 describe-images \
               --owners 'aws-marketplace' \
